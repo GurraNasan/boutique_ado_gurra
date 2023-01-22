@@ -11,7 +11,7 @@ class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
-    phoone_number = models.CharField(max_length=20, null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = models.CharField(max_length=40, null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
@@ -55,7 +55,7 @@ class Order(models.Model):
         return self.order_number
 
 
-class OredrLineItem(models.Model):
+class OrderLineItem(models.Model):
     Order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitem')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True )
