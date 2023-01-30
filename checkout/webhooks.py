@@ -18,7 +18,7 @@ def webhook(request):
 
     # Get the webhook data
     event = None
-    payload = request.data
+    payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
 
     try:
