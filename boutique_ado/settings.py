@@ -181,6 +181,7 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+Default_FROM_EMAIL = 'boutiqueado@exemple.com'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
