@@ -176,6 +176,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # AWS
 if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'THU, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=9999999',
+    }
+
     AWS_STORAGE_BUCKET_NAME = 'butikado'
     AWS_S3_REGION_NAME = 'eu-north-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
